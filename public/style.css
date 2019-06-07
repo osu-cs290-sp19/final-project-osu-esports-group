@@ -8,6 +8,7 @@ body{
 h1{
   text-align: center;
   color: #d73f09;
+  display: block;
 }
 
 .navbar{
@@ -27,10 +28,12 @@ h1{
 }
 .navitem{
   display: inline-block;
+  border-bottom: solid #d73f09 2px;
 }
 .navitem.navlink:hover{
   border-bottom: solid white 2px;
 }
+
 a {
   color: white;
   text-decoration: none;
@@ -45,4 +48,24 @@ a {
   width: 250px;
   display: flex;
 
+}
+
+.peopleContainer{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1.page-title{
+  text-align: center;
+  color: #d73f09;
+  display: block;
+}
+
+.peopleCard{
+  flex: 2 32%;
+  margin: 10px;
+  border: solid white 2px;
+  padding 10px;
+  background-color: #a1a8b5;
 }
