@@ -63,6 +63,16 @@ a {
   height: 100%;
 }
 
+<<<<<<< HEAD
+=======
+.about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+>>>>>>> 9441d16f2dad73abe492d1adf6066bf7c84a93fd
 .about-text{
   background-color: #fff;
   /* position: fixed; */
