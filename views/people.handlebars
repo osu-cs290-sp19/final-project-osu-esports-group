@@ -1,4 +1,6 @@
-<h1 class="page-title">People in the Club</h1>
+<h1 class="page-title">{{title}}</h1>
 <main class="peopleContainer">
- {{>peopleCard}}
+  {{#each players}}
+    {{>peopleCard}}
+  {{/each}}
 </main>

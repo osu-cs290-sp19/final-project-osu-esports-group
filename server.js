@@ -35,19 +35,72 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  res.status(200).render('people');
+  var collection = db.collection('home');
+  collection.find({}).toArray(function (err, gameIcons) {
+   if (err) {
+     res.status(500).send({
+       error: "Error fetching people from DB"
+     });
+   } else {
+     res.status(200).render('home', {
+       gameIcons: gameIcons
+     });
+   }
+ });
 });
 
 app.get('/index.html', function(req, res){
-  res.status(200).render('people');
+  var collection = db.collection('home');
+  collection.find({}).toArray(function (err, gameIcons) {
+   if (err) {
+     res.status(500).send({
+       error: "Error fetching people from DB"
+     });
+   } else {
+     res.status(200).render('home', {
+       gameIcons: gameIcons
+     });
+   }
+ });
 });
 
 
 app.get('/people', function(req, res){
-  res.status(200).render('people', {
-    game: "League of Legends",
-    username: "Linkage"
-  });
+ var collection = db.collection('players');
+ collection.find({}).toArray(function (err, players) {
+  if (err) {
+    res.status(500).send({
+      error: "Error fetching people from DB"
+    });
+  } else {
+    res.status(200).render('people', {
+      players: players,
+      title: "People in the Club"
+    });
+  }
+});
+});
+
+app.get('/players/:team', function(req, res, next){
+var team = req.params.team.toLowerCase();
+ var collection = db.collection('players');
+ collection.find({gameid: team}).toArray(function (err, team) {
+  if (err) {
+    res.status(500).send({
+      error: "Error fetching people from DB"
+    });
+  } else if(team.length < 1){
+    res.status(200).render('people', {
+      players: team,
+      title: "No players for this team yet... Sign up on the Join page!"
+    });
+  } else {
+    res.status(200).render('people', {
+      players: team,
+      title: team[0].game
+    });
+  }
+});
 });
 
 app.get('*', function (req, res) {

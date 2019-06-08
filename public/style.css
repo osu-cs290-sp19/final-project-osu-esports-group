@@ -59,8 +59,33 @@ h1.page-title{
 
 .peopleCard{
   flex: 2 32%;
+  font-family: "Open+Sans", Helvetica, sans-serif;
+  font-size: 24px;
   margin: 10px;
   border: solid white 2px;
-  padding 10px;
-  background-color: #a1a8b5;
+  padding: 10px;
+  background-color: white;
+}
+
+img.game-icon{
+  flex-shrink: 0;
+  max-height: 300px;
+  height: auto;
+}
+
+.game-card{
+  flex: 20%;
+  background-color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  margin: 5px;
+  overflow: hidden;
+  background-color: #252525;
+}
+
+.home-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
 }
