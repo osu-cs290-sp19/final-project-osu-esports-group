@@ -103,6 +103,34 @@ var team = req.params.team.toLowerCase();
 });
 });
 
+app.post('/join/addMember', function (req, res, next) {
+  if (req.body && req.body.name && req.body.username && req.body.email && req.body.year && req.body.game && req.body.gameid) {
+    var collection = db.collection('players');
+    var player = {
+      name: req.body.name,
+      username: req.body.username,
+      email: req.body.email,
+      year: req.body.year,
+      game: req.body.game,
+      gameid: req.body.gameid
+    };
+    console.log(player);
+    collection.insertOne(player,
+      function (err, result) {
+        if (err) {
+          res.status(500).send({
+            error: "Error inserting player into DB"
+          });
+        } else {
+          res.status(200).send("Success");
+        }
+      }
+    );
+  } else {
+    res.status(400).send("Request needs a body with all fields");
+  }
+});
+
 app.get('/join', function(req, res){
   res.status(200).render('join', {
   });

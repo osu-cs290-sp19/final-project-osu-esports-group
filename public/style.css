@@ -42,7 +42,6 @@ a {
   height: 80px;
   width: 250px;
   display: flex;
-
 }
 
 
@@ -198,7 +197,6 @@ h1.page-title{
   margin: 10px;
   border: solid white 2px;
   padding: 10px;
-<<<<<<< HEAD
   background-color: white;
 }
 
@@ -223,7 +221,5 @@ img.game-icon{
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
-=======
   background-color: #a1a8b5;
->>>>>>> 3884a1632f685f292d695c1231bcdee4b7b830be
 }
