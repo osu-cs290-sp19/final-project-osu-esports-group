@@ -10,6 +10,18 @@ h1{
   display: block;
 }
 
+footer{
+ position: absolute;
+ bottom: 0px;
+ display: flex;
+ flex-direction: row;
+
+
+}
+.discord-link {
+
+}
+
 .navbar{
   background-color: #d73f09;
   height: 100px;
@@ -44,6 +56,34 @@ a {
   display: flex;
 }
 
+.about-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.about-text{
+  background-color: #fff;
+  /* position: fixed; */
+  top: auto;
+  bottom: auto;
+  /* left: 50%; */
+  display: inline-block;
+  max-width: 700px;
+
+  border-radius: 5%;
+
+}
+.about-text a{
+  color: black;
+  text-decoration: underline;
+}
+.about-text p{
+  padding: 5px;
+  margin: 15px;
+  color: black;
+}
 
 .join-page-container {
   display: flex;
