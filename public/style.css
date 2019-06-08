@@ -5,10 +5,17 @@ body{
   background-color: #252525;
 }
 
+<<<<<<< HEAD:style.css
 .title{
   color: #252525;
   text-align: left;
 
+=======
+h1{
+  text-align: center;
+  color: #d73f09;
+  display: block;
+>>>>>>> 19e5aa3e641a36f2f4915f2d94e456a8e0ce1bed:public/style.css
 }
 
 .navbar{
@@ -27,11 +34,17 @@ body{
 }
 .navitem{
   display: inline-block;
+  border-bottom: solid #d73f09 2px;
 }
 .navitem.navlink:hover{
   text-decoration: underline;
 }
+<<<<<<< HEAD:style.css
 .navlist a {
+=======
+
+a {
+>>>>>>> 19e5aa3e641a36f2f4915f2d94e456a8e0ce1bed:public/style.css
   color: white;
   text-decoration: none;
   padding: 12px 8px 12px 8px;
@@ -45,4 +58,24 @@ body{
   width: 250px;
   display: flex;
 
+}
+
+.peopleContainer{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1.page-title{
+  text-align: center;
+  color: #d73f09;
+  display: block;
+}
+
+.peopleCard{
+  flex: 2 32%;
+  margin: 10px;
+  border: solid white 2px;
+  padding 10px;
+  background-color: #a1a8b5;
 }
