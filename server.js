@@ -136,6 +136,11 @@ app.get('/join', function(req, res){
   });
 });
 
+app.get('/about', function(req, res){
+  res.status(200).render('about', {
+  });
+});
+
 app.get('*', function (req, res) {
   console.log(req.url);
   res.status(404).render('404');
