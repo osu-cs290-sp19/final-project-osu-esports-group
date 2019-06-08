@@ -4,18 +4,10 @@ body{
   font-family: "Open+Sans", Helvetica, sans-serif;
   background-color: #252525;
 }
-
-<<<<<<< HEAD:style.css
-.title{
-  color: #252525;
-  text-align: left;
-
-=======
 h1{
   text-align: center;
   color: #d73f09;
   display: block;
->>>>>>> 19e5aa3e641a36f2f4915f2d94e456a8e0ce1bed:public/style.css
 }
 
 .navbar{
@@ -27,28 +19,21 @@ h1{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-
 }
 .navlist{
-
 }
 .navitem{
   display: inline-block;
   border-bottom: solid #d73f09 2px;
 }
 .navitem.navlink:hover{
-  text-decoration: underline;
+  border-bottom: solid white 2px;
 }
-<<<<<<< HEAD:style.css
-.navlist a {
-=======
 
 a {
->>>>>>> 19e5aa3e641a36f2f4915f2d94e456a8e0ce1bed:public/style.css
   color: white;
   text-decoration: none;
   padding: 12px 8px 12px 8px;
-
 }
 .logo img{
   padding-right: 10px;
