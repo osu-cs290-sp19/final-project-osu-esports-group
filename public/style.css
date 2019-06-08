@@ -45,6 +45,140 @@ a {
 
 }
 
+
+.join-page-container {
+  display: flex;
+  justify-content: center;
+  justify-content:  space-around;
+
+}
+.requirement-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  position: fixed;
+  top: 100px;
+  bottom: auto;
+  left: 0;
+  right: 0;
+}
+
+.requirement-text{
+  align-items: center;
+}
+.join-container {
+  width: auto;
+  height: auto;
+  max-width: 600px;
+  min-width: 350px;
+  min-height: 350px;
+  max-height: 600px;
+  margin: 40px auto;
+  background-color: #d73f08;
+  border-radius: 10px;
+  position: fixed;
+  top: 300px;
+  bottom: auto;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  /* overflow: scroll; */
+}
+
+.join-body {
+
+}
+
+.join-header {
+  position: relative;
+  padding: 10px 20px;
+}
+
+.join-header h3 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.join-close-button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 24px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.join-body {
+  padding: 20px;
+}
+
+.join-input-element {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.join-input-element label {
+  font-weight: 600;
+  flex: 1 75px;
+  margin-right: 10px;
+  position: inline-block;
+}
+
+.join-input-element input,
+.join-input-element textarea {
+  flex: 6 200px;
+  padding: 8px;
+  font-size: auto;
+  border: 1px solid #aaa;
+  overflow: hidden;
+
+}
+
+.game_response {
+  font-size: 18px;
+  display:inline;
+}
+.join-input-element textarea {
+  min-height: 10px;
+  max-height: 15px;
+  resize: none;
+}
+
+.join-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 5px 10px 5px;
+}
+
+.join-footer button {
+  font-size: 15px;
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #333;
+  /* border-radius: 5px; */
+  padding: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+
+.join-footer .join-accept-button {
+  background-color: #fff;
+}
+
+.join-footer .join-accept-button:hover {
+  background-color: #eee;
+  color: #333;
+}
+
+
 .peopleContainer{
   padding: 10px;
   display: flex;
@@ -64,6 +198,7 @@ h1.page-title{
   margin: 10px;
   border: solid white 2px;
   padding: 10px;
+<<<<<<< HEAD
   background-color: white;
 }
 
@@ -88,4 +223,7 @@ img.game-icon{
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+=======
+  background-color: #a1a8b5;
+>>>>>>> 3884a1632f685f292d695c1231bcdee4b7b830be
 }

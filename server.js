@@ -103,6 +103,11 @@ var team = req.params.team.toLowerCase();
 });
 });
 
+app.get('/join', function(req, res){
+  res.status(200).render('join', {
+  });
+});
+
 app.get('*', function (req, res) {
   console.log(req.url);
   res.status(404).render('404');
