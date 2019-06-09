@@ -8,8 +8,6 @@ h1{
   text-align: center;
   color: #ffffff;
   display: block;
-<<<<<<< HEAD
-=======
 }
 
 footer{
@@ -20,12 +18,8 @@ footer{
  flex-direction: row;
  background-color: #252525;
  width: 160px;
-
 }
-.discord-link {
 
->>>>>>> 09bf68478074e7fed49d4caace46d3d0b599795d
-}
 .navbar{
   background-color: #d73f09;
   height: 100px;
@@ -36,12 +30,12 @@ footer{
   justify-content: flex-start;
   align-items: center;
 }
-.navlist{
-}
+
 .navitem{
   display: inline-block;
   border-bottom: solid #d73f09 2px;
 }
+
 .navitem.navlink:hover{
   border-bottom: solid white 2px;
 }
@@ -50,15 +44,14 @@ a {
   color: white;
   text-decoration: none;
   padding: 12px 8px 12px 8px;
-<<<<<<< HEAD
 }
+
 b{
     color: black;
     text-decoration: none;
     padding: 12px 10px 12px 8px;
-=======
->>>>>>> 09bf68478074e7fed49d4caace46d3d0b599795d
 }
+
 .logo img{
   padding-right: 10px;
   padding-left: 10px;
@@ -66,10 +59,8 @@ b{
   height: 80px;
   width: 250px;
   display: flex;
-<<<<<<< HEAD
 }
-=======
-}
+
 
 .about-container{
   display: flex;
@@ -95,8 +86,8 @@ b{
   max-width: 700px;
 
   border-radius: 5%;
-
 }
+
 .about-text a{
   color: black;
   text-decoration: underline;
@@ -110,7 +101,7 @@ b{
 .join-page-container {
   display: flex;
   justify-content: center;
-  justify-content:  space-around;
+  justify-content: space-around;
 
 }
 .requirement-container{
@@ -201,6 +192,7 @@ b{
   font-size: 18px;
   display:inline;
 }
+
 .join-input-element textarea {
   min-height: 10px;
   max-height: 15px;
@@ -235,8 +227,6 @@ b{
   color: #333;
 }
 
-
->>>>>>> 09bf68478074e7fed49d4caace46d3d0b599795d
 .peopleContainer{
   padding: 20px;
   display: flex;
@@ -251,7 +241,6 @@ h1.page-title{
 }
 
 .peopleCard{
-<<<<<<< HEAD
   flex: 2 32%;
   margin: 5px;
   border: solid white 2px;
@@ -266,7 +255,6 @@ h1.page-title{
   border: solid white 2px;
   padding 5px;
   background-color: #a1a8b5;
-=======
   flex: 32%;
   max-width: 400px;
   font-family: "Open+Sans", Helvetica, sans-serif;
@@ -299,7 +287,6 @@ img.game-icon{
   flex-wrap: wrap;
   padding: 10px;
   background-color: #252525;
->>>>>>> 09bf68478074e7fed49d4caace46d3d0b599795d
 }
 
 .teamRoster {
@@ -352,4 +339,95 @@ img.game-icon{
       display: flex;
       flex-wrap: wrap;
       margin: 0;
-  }
+}
+body{
+  margin: 0;
+  padding: 0;
+  font-family: "Open+Sans", Helvetica, sans-serif;
+  background-color: #252525;
+}
+h1{
+  text-align: center;
+  color: #d73f09;
+  display: block;
+}
+
+.navbar{
+  background-color: #d73f09;
+  height: 100px;
+  font-size: 19px;
+  font-weight: bold;
+  margin: 0px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.navlist{
+}
+.navitem{
+  display: inline-block;
+  border-bottom: solid #d73f09 2px;
+}
+.navitem.navlink:hover{
+  border-bottom: solid white 2px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 8px 12px 8px;
+}
+.logo img{
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0;
+  height: 80px;
+  width: 250px;
+  display: flex;
+
+}
+
+.peopleContainer{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1.page-title{
+  text-align: center;
+  color: #d73f09;
+  display: block;
+}
+
+.peopleCard{
+  flex: 2 32%;
+  font-family: "Open+Sans", Helvetica, sans-serif;
+  font-size: 24px;
+  margin: 10px;
+  border: solid white 2px;
+  padding: 10px;
+  background-color: white;
+}
+
+img.game-icon{
+  flex-shrink: 0;
+  max-height: 300px;
+  height: auto;
+}
+
+.game-card{
+  flex: 20%;
+  background-color: #fff;
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  margin: 5px;
+  overflow: hidden;
+  background-color: #252525;
+}
+
+.home-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}

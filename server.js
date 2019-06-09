@@ -132,18 +132,14 @@ app.post('/join/addMember', function (req, res, next) {
 });
 
 app.get('/join', function(req, res){
-  res.status(200).render('join', {
-  });
+  res.status(200).render('join');
 });
 
 app.get('/about', function(req, res){
-  res.status(200).render('about', {
-  });
+  res.status(200).render('about');
 });
 app.get('/teams', function(req, res){
-  res.status(200).render('teams', {
-
-  });
+  res.status(200).render('teams');
 });
 app.get('*', function (req, res) {
   console.log(req.url);
