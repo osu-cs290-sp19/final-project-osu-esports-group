@@ -11,11 +11,13 @@ h1{
 }
 
 footer{
- position: absolute;
+ position: fixed;
+ right: 0;
  bottom: 0px;
  display: flex;
  flex-direction: row;
-
+ background-color: #252525;
+ width: 160px;
 
 }
 .discord-link {
@@ -63,8 +65,6 @@ a {
   height: 100%;
 }
 
-<<<<<<< HEAD
-=======
 .about-container{
   display: flex;
   flex-direction: column;
@@ -72,7 +72,6 @@ a {
   height: 100%;
 }
 
->>>>>>> 9441d16f2dad73abe492d1adf6066bf7c84a93fd
 .about-text{
   background-color: #fff;
   /* position: fixed; */
@@ -133,10 +132,6 @@ a {
   right: 0;
   z-index: 1010;
   /* overflow: scroll; */
-}
-
-.join-body {
-
 }
 
 .join-header {
@@ -232,6 +227,8 @@ a {
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 50px;
+  justify-content: center;
 }
 
 h1.page-title{
@@ -241,9 +238,10 @@ h1.page-title{
 }
 
 .peopleCard{
-  flex: 2 32%;
+  flex: 32%;
+  max-width: 400px;
   font-family: "Open+Sans", Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 14px;
   margin: 10px;
   border: solid white 2px;
   padding: 10px;
