@@ -49,7 +49,11 @@ app.get('/people', function(req, res){
     username: "Linkage"
   });
 });
+app.get('/teams', function(req, res){
+  res.status(200).render('teams', {
 
+  });
+});
 app.get('*', function (req, res) {
   console.log(req.url);
   res.status(404).render('404');
