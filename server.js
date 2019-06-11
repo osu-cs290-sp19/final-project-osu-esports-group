@@ -124,12 +124,49 @@ app.post('/join/addMember', function (req, res, next) {
         } else {
           res.status(200).send("Success");
         }
-      }
-    );
+      });
   } else {
     res.status(400).send("Request needs a body with all fields");
   }
 });
+
+app.delete('/resetPage', function (req, res, next) {
+    var collection = db.collection('players');
+    if(req.body){
+      collection.deleteMany(req.body,
+        function (err, result) {
+          if (err) {
+            res.status(500).send({
+              error: "Error inserting player into DB"
+            });
+          } else {
+            res.status(200).send("Success");
+          }
+        });
+    } else {
+      res.status(400).send("Could not identify Request Body");
+    }
+});
+
+app.delete('/deletePlayerCard', function (req, res, next){
+  var collection = db.collection('players');
+  if(req.body && req.body.email){
+    var playerCardGone = {
+      email: req.body.email
+    }
+    collection.deleteOne(playerCardGone, function(err, result){
+      if(err){
+        rest.status(500).send({
+          error: "Error deleting player card"
+        });
+      } else {
+        res.status(200).send("Success");
+      }
+    });
+  } else {
+    res.status(400).send("Could not identify ID of card to be removed");
+  }
+})
 
 app.get('/join', function(req, res){
   res.status(200).render('join');

@@ -313,9 +313,9 @@ h1.page-title{
 }
 
 .peopleCard{
-  flex: 2 32%;
+  width: 300px;
   font-family: "Open+Sans", Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 14px;
   margin: 10px;
   border: solid white 2px;
   padding: 10px;
@@ -343,4 +343,35 @@ img.game-icon{
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+}
+
+.resetPageBtnContainer{
+  text-align: center;
+}
+
+.resetPageBtn{
+  background-color: white;
+  width: 200px;
+  height: 40px;
+  font-size: 24px;
+}
+
+.deletePlayerCard{
+  display: inline;
+  text-align: right;
+  height: 20px;
+}
+
+.player-info-line{
+  width: 250px;
+  display: inline-block;
+  margin: 5px;
+}
+
+button:hover{
+  background-color:  #d73f09;
+}
+
+.hidden{
+  display: none;
 }

@@ -65,11 +65,80 @@ function addMember(){
   }
 }
 
+function removeOneCard(event){
+  if(event.target.classList.contains('deletePlayerCardBtn')){
+    console.log("A button was clicked");
+    var deleteRequest = new XMLHttpRequest();
+    var requestURL = '/deletePlayerCard';
+    var getPlayerCardId = event.target.value;
+    var playerCardInDom = event.target.parentNode.parentNode
+    var requestBody = JSON.stringify({email: getPlayerCardId});
+    deleteRequest.open('DELETE', requestURL);
+    deleteRequest.addEventListener('load', function (event) {
+      if (event.target.status === 200) {
+        console.log("Success");
+        var peopleContainer = document.querySelector('.peopleContainer');
+        peopleContainer.removeChild(playerCardInDom);
+      } else {
+        console.log(event.target.status);
+        alert("Error deleting player card: " + event.target.response);
+      }
+    });
+    deleteRequest.setRequestHeader('Content-Type', 'application/json');
+    deleteRequest.send(requestBody);
+  }
+}
+
+function getGameIdFromURL() {
+  var path = window.location.pathname;
+  var pathParts = path.split('/');
+  if (pathParts[1] === "players") {
+    return pathParts[2];
+  } else {
+    return null;
+  }
+}
+
+function resetPage(){
+  var deleteRequest = new XMLHttpRequest();
+  var gameRemove = getGameIdFromURL();
+  var requestURL = '/resetPage';
+  var requestBody;
+  if(gameRemove){
+    requestBody = JSON.stringify({gameid: gameRemove});
+  } else {
+    requestBody = JSON.stringify({});
+  }
+  deleteRequest.open('DELETE', requestURL);
+  deleteRequest.addEventListener('load', function (event) {
+    if (event.target.status === 200) {
+      console.log("Success");
+      var playerContainer = document.querySelector('.peopleContainer');
+      while(playerContainer.firstChild){
+        playerContainer.removeChild(playerContainer.firstChild);
+      }
+    } else {
+      alert("Error reseting page: " + event.target.response);
+    }
+  });
+  deleteRequest.setRequestHeader('Content-Type', 'application/json');
+  deleteRequest.send(requestBody);
+}
+
 window.addEventListener('DOMContentLoaded', function () {
   console.log("DOM conted loaded, Adding event listeners");
   var submitBtn = document.querySelector('.join-accept-button');
   if(submitBtn){
     submitBtn.addEventListener('click', addMember);
+  }
+  var resetPageBtn = document.querySelector('.resetPageBtn');
+  if(resetPageBtn){
+    resetPageBtn.addEventListener('click', resetPage);
+  }
+
+  var peopleContainer = document.querySelector('.peopleContainer');
+  if(peopleContainer){
+    peopleContainer.addEventListener('click', removeOneCard)
   }
 
 });
