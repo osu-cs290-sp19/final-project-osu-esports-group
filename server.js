@@ -104,7 +104,7 @@ var team = req.params.team.toLowerCase();
 });
 
 app.post('/join/addMember', function (req, res, next) {
-  if (req.body && req.body.name && req.body.username && req.body.email && req.body.year && req.body.game && req.body.gameid) {
+  if (req.body && req.body.name && req.body.username && req.body.email && req.body.year && req.body.game && req.body.gameid && req.body.playerId) {
     var collection = db.collection('players');
     var player = {
       name: req.body.name,
@@ -112,7 +112,8 @@ app.post('/join/addMember', function (req, res, next) {
       email: req.body.email,
       year: req.body.year,
       game: req.body.game,
-      gameid: req.body.gameid
+      gameid: req.body.gameid,
+      playerId: req.body.playerId
     };
     console.log(player);
     collection.insertOne(player,
@@ -150,9 +151,9 @@ app.delete('/resetPage', function (req, res, next) {
 
 app.delete('/deletePlayerCard', function (req, res, next){
   var collection = db.collection('players');
-  if(req.body && req.body.email){
+  if(req.body && req.body.playerId){
     var playerCardGone = {
-      email: req.body.email
+      playerId: req.body.playerId
     }
     collection.deleteOne(playerCardGone, function(err, result){
       if(err){

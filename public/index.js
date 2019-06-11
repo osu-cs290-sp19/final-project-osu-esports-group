@@ -35,7 +35,8 @@ function addMember(){
       year: year,
       email: email,
       game: trueCheckbox,
-      gameid: gameid
+      gameid: gameid,
+      playerId: name+year+email+trueCheckbox+username
     });
 
     postRequest.addEventListener('load', function (event) {
@@ -72,7 +73,7 @@ function removeOneCard(event){
     var requestURL = '/deletePlayerCard';
     var getPlayerCardId = event.target.value;
     var playerCardInDom = event.target.parentNode.parentNode
-    var requestBody = JSON.stringify({email: getPlayerCardId});
+    var requestBody = JSON.stringify({playerId: getPlayerCardId});
     deleteRequest.open('DELETE', requestURL);
     deleteRequest.addEventListener('load', function (event) {
       if (event.target.status === 200) {
