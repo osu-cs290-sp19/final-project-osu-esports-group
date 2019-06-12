@@ -176,9 +176,22 @@ app.get('/join', function(req, res){
 app.get('/about', function(req, res){
   res.status(200).render('about');
 });
+
 app.get('/teams', function(req, res){
-  res.status(200).render('teams');
+  var collection = db.collection('roster');
+  collection.find({}).toArray(function (err, rosterPlayer) {
+   if (err) {
+     res.status(500).send({
+       error: "Error fetching people from DB"
+     });
+   } else {
+     res.status(200).render('teams', {
+       rosterPlayer: rosterPlayer
+     });
+   }
+  });
 });
+
 app.get('*', function (req, res) {
   console.log(req.url);
   res.status(404).render('404');
