@@ -1,3 +1,19 @@
+
+function clearRequest(){
+  var checkboxes = document.getElementsByTagName('input');
+  for (var i = 0; i < checkboxes.length; i++){
+    checkboxes[i].checked = false;
+  }
+  var clearName = document.getElementById('join-name-input');
+  var clearEmail = document.getElementById('join-email-input');
+  var clearYear = document.getElementById('join-year-input');
+  var clearUsername = document.getElementById('join-username-input');
+  clearName.value = '';
+  clearEmail.value = '';
+  clearYear.value = '';
+  clearUsername.value = '';
+}
+
 function addMember(){
   var name = document.getElementById('join-name-input').value.trim();
   var email = document.getElementById('join-email-input').value.trim();
@@ -39,20 +55,13 @@ function addMember(){
       playerId: name+year+email+trueCheckbox+username
     });
 
+
+
+
     postRequest.addEventListener('load', function (event) {
       if (event.target.status === 200) {
         console.log("Success");
-        for (var i = 0; i < checkboxes.length; i++){
-          checkboxes[i].checked = false;
-        }
-        var clearName = document.getElementById('join-name-input');
-        var clearEmail = document.getElementById('join-email-input');
-        var clearYear = document.getElementById('join-year-input');
-        var clearUsername = document.getElementById('join-username-input');
-        clearName.value = '';
-        clearEmail.value = '';
-        clearYear.value = '';
-        clearUsername.value = '';
+        clearRequest();
       } else {
         alert("Error storing photo: " + event.target.response);
       }
@@ -129,8 +138,14 @@ function resetPage(){
 window.addEventListener('DOMContentLoaded', function () {
   console.log("DOM conted loaded, Adding event listeners");
   var submitBtn = document.querySelector('.join-accept-button');
+  var clearBtn = document.querySelector('.join-clear-button');
+
   if(submitBtn){
     submitBtn.addEventListener('click', addMember);
+  }
+  if(clearBtn){
+    clearBtn.addEventListener('click', clearRequest);
+
   }
   var resetPageBtn = document.querySelector('.resetPageBtn');
   if(resetPageBtn){
