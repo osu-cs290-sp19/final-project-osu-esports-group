@@ -167,7 +167,7 @@ app.delete('/deletePlayerCard', function (req, res, next){
   } else {
     res.status(400).send("Could not identify ID of card to be removed");
   }
-})
+});
 
 app.get('/join', function(req, res){
   res.status(200).render('join');
